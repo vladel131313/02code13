@@ -1,0 +1,17 @@
+
+  static char login_buf[9];
+  static char pwd_buf[9];
+  generate_random_str(login_buf, 8);
+  generate_random_str(pwd_buf, 8);
+  *login = login_buf;
+  *pwd = pwd_buf;
+}
+int main(void)
+{
+#define BUFSIZE 80
+  char login_buf[BUFSIZE];
+  char pwd_buf[BUFSIZE];
+  char *root_login;
+  char *root_pwd;
+  srand(time(NULL));
+  load_credentials(&root_login, &root_pwd);
